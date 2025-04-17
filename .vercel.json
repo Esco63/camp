@@ -3,11 +3,8 @@
     "rewrites": [
       {
         "source": "/buchung",
-        "destination": "/buchung/index.html"
+        "destination": "/buchung.html"
       }
-    ],
-    "builds": [
-      { "src": "index.html", "use": "@vercel/static" }
     ]
   }
   
