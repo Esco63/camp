@@ -6,7 +6,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        buchung: resolve(__dirname, 'buchung.html')  // <== das hier ist wichtig
+        buchung: resolve(__dirname, 'buchung.html'),
+        geraete: resolve(__dirname, "geraete.html")  // <== das hier ist wichtig
       }
     }
   }

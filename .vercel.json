@@ -4,6 +4,10 @@
       {
         "source": "/buchung",
         "destination": "/buchung.html"
+      },
+      {
+        "source": "/geraete",
+        "destination": "/geraete.html"
       }
     ]
   }
