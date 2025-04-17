@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/buchung",
+        "destination": "/buchung/index.html"
+      }
+    ]
+  }
+  
