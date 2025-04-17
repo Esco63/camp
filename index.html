@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="de">
-<!-- Navbar -->
-<header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-colors duration-300 ease-in-out">
-  <nav class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
-    <div class="text-white text-2xl font-bold tracking-wide glow-text">Camp Schwerin</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camp Schwerin</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-900 font-sans relative overflow-x-hidden">
 
-    <!-- Desktop Navigation -->
-    <ul class="hidden md:flex space-x-6 font-medium text-white nav-links transition-colors duration-300">
-      <li><a href="#start" class="nav-link">Start</a></li>
-      <li><a href="#raeume" class="nav-link">Räume</a></li>
-      <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
-      <li><a href="/buchung.html" class="nav-link">Buchung</a></li>
-    </ul>
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300 ease-in-out">
+      <nav class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
+        <div class="text-white text-2xl font-bold tracking-wide glow-text">Camp Schwerin</div>
 
-    <!-- Mobile Button -->
-    <button id="menu-toggle" class="md:hidden text-white text-3xl transition-colors duration-300 ease-in-out">
-      ☰
-    </button>
-  </nav>
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex space-x-6 font-medium text-white nav-links">
+          <li><a href="#start" class="nav-link">Start</a></li>
+          <li><a href="#raeume" class="nav-link">Räume</a></li>
+          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+          <li><a href="/buchung.html">Buchung</a></li>
+        </ul>
 
-  <!-- Mobile Navigation -->
-  <ul id="mobile-menu" class="hidden md:hidden flex-col absolute top-20 left-0 w-full bg-white text-gray-800 font-medium nav-links px-6 py-4 space-y-4 z-50">
-    <li><a href="#start" class="nav-link">Start</a></li>
-    <li><a href="#raeume" class="nav-link">Räume</a></li>
-    <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
-    <li><a href="/buchung.html" class="nav-link">Buchung</a></li>
-  </ul>
-</header>
+        <!-- Mobile Button -->
+        <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">
+          ☰
+        </button>
+      </nav>
+
+      <!-- Mobile Navigation -->
+      <ul id="mobile-menu" class="hidden md:hidden flex-col absolute top-20 left-0 w-full bg-white text-gray-800 font-medium nav-links px-6 py-4 space-y-4 z-50">
+        <li><a href="#start" class="nav-link">Start</a></li>
+        <li><a href="#raeume" class="nav-link">Räume</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        <li><a href="/buchung.html" class="nav-link">Buchung</a></li>
+
+      </ul>
+    </header>
 
     <!-- Hero Section -->
     <section id="start" class="min-h-[70vh] relative flex items-center justify-center">
@@ -179,28 +188,45 @@
       </div>
     </footer>
 
+    <!-- Mobile Toggle Script -->
     <script>
-      const navbar = document.getElementById('navbar');
-      const burger = document.getElementById('menu-toggle');
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      toggle?.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    </script>
+
+    <script>
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('nav');
+        const burger = document.getElementById('menu-toggle');
     
-      window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-          navbar.classList.add('bg-white', 'shadow-md');
-          navbar.classList.remove('bg-transparent');
+          navbar.classList.add('bg-white');
           burger.classList.remove('text-white');
-          burger.classList.add('text-pink-500');
+          burger.classList.add('text-pink-500'); // Tailwind: rosa
         } else {
-          navbar.classList.remove('bg-white', 'shadow-md');
-          navbar.classList.add('bg-transparent');
+          navbar.classList.remove('bg-white');
           burger.classList.remove('text-pink-500');
           burger.classList.add('text-white');
         }
       });
-    
-      // Mobile Menü Toggle
-      const mobileMenu = document.getElementById('mobile-menu');
-      burger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+    </script>
+
+    <!-- Scroll Navbar Script -->
+    <script>
+      window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 80) {
+          navbar.classList.add('bg-white', 'shadow-md');
+          navbar.classList.remove('bg-transparent');
+          navbar.querySelectorAll('.nav-link').forEach(el => el.classList.add('text-gray-900'));
+        } else {
+          navbar.classList.remove('bg-white', 'shadow-md');
+          navbar.classList.add('bg-transparent');
+          navbar.querySelectorAll('.nav-link').forEach(el => el.classList.remove('text-gray-900'));
+        }
       });
     </script>
 
