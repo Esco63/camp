@@ -10,51 +10,55 @@
 
     <!-- Navbar -->
     <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300 ease-in-out">
-        <nav class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between transition-colors duration-300 ease-in-out">
-          <div class="text-white text-2xl font-bold tracking-wide glow-text">Camp Schwerin</div>
-  
-        <!-- Desktop Navigation mit stabiler Hoverfläche -->
+      <nav class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between transition-colors duration-300 ease-in-out">
+
+        <!-- Logo -->
+        <div class="text-white text-2xl font-bold tracking-wide glow-text">Camp Schwerin</div>
+
+        <!-- Desktop Navigation mit Dropdown -->
         <ul class="hidden md:flex space-x-6 font-medium text-white nav-links relative">
-          <li><a href="/index.html#start" class="nav-link">Start</a></li>
-          <li><a href="/index.html#raeume" class="nav-link">Räume</a></li>
-          <li><a href="/index.html#kontakt" class="nav-link">Kontakt</a></li>
-  
-          <!-- Fixiertes Dropdown -->
+          <li><a href="#start" class="nav-link">Start</a></li>
+          <li><a href="#raeume" class="nav-link">Räume</a></li>
+          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+
+          <!-- Dropdown für Vermietung -->
           <li class="relative group">
             <div class="nav-link cursor-pointer text-white">Vermietung ▾</div>
             <div class="absolute left-0 top-full pt-3 w-48 z-50">
               <div class="bg-white rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-out">
                 <a href="/buchung.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Räume</a>
-                <a href="/geräte.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Geräte</a>
+                <a href="/geraete.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Geräte</a>
               </div>
             </div>
           </li>
-  
-          <!-- Mobile Button -->
-          <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none transition-colors duration-300">
-            ☰
-          </button>
-        </nav>
-  
-        <!-- Mobile Navigation -->
-        <ul id="mobile-menu" class="hidden md:hidden flex-col absolute top-20 left-0 w-full bg-white text-gray-800 font-medium nav-links px-6 py-4 space-y-4 z-50">
-          <li><a href="/index.html#start" class="nav-link">Start</a></li>
-          <li><a href="/index.html#raeume" class="nav-link">Räume</a></li>
-          <li><a href="/index.html#kontakt" class="nav-link">Kontakt</a></li>
-          
-          <!-- Mobile Dropdown -->
-          <li>
-            <button id="vermietung-toggle" class="w-full text-left nav-link flex justify-between items-center">
-              Vermietung
-              <span>▾</span>
-            </button>
-            <ul id="vermietung-submenu" class="hidden pl-4 mt-2 space-y-2">
-              <li><a href="/buchung.html" class="block">Räume</a></li>
-              <li><a href="/geräte.html" class="block">Geräte</a></li>
-            </ul>
-          </li>
         </ul>
-      </header>
+
+        <!-- Burger-Button für Mobile -->
+        <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">
+          ☰
+        </button>
+      </nav>
+
+      <!-- Mobile Navigation -->
+      <ul id="mobile-menu" class="hidden md:hidden flex-col absolute top-20 left-0 w-full bg-white text-gray-800 font-medium nav-links px-6 py-4 space-y-4 z-50">
+        <li><a href="#start" class="nav-link">Start</a></li>
+        <li><a href="#raeume" class="nav-link">Räume</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+
+        <!-- Mobile Dropdown -->
+        <li>
+          <button id="vermietung-toggle" class="w-full text-left nav-link flex justify-between items-center">
+            Vermietung
+            <span>▾</span>
+          </button>
+          <ul id="vermietung-submenu" class="hidden pl-4 mt-2 space-y-2">
+            <li><a href="/buchung.html" class="block">Räume</a></li>
+            <li><a href="/geraete.html" class="block">Geräte</a></li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+
 
     <!-- Hero -->
     <section class="min-h-[70vh] relative flex items-center justify-center">
@@ -140,10 +144,18 @@
     </footer>
 
     <script>
+      // Mobile Menü Toggle
       const toggle = document.getElementById('menu-toggle');
       const menu = document.getElementById('mobile-menu');
       toggle?.addEventListener('click', () => {
         menu.classList.toggle('hidden');
+      });
+
+      // Mobile Dropdown Toggle
+      const vermietungToggle = document.getElementById('vermietung-toggle');
+      const vermietungSubmenu = document.getElementById('vermietung-submenu');
+      vermietungToggle?.addEventListener('click', () => {
+        vermietungSubmenu.classList.toggle('hidden');
       });
 
       // Scroll Navbar

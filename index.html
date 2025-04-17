@@ -11,27 +11,30 @@
     <!-- Navbar -->
     <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300 ease-in-out">
       <nav class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between transition-colors duration-300 ease-in-out">
+        
+        <!-- Logo -->
         <div class="text-white text-2xl font-bold tracking-wide glow-text">Camp Schwerin</div>
 
-      <!-- Desktop Navigation mit stabiler Hoverfläche -->
-      <ul class="hidden md:flex space-x-6 font-medium text-white nav-links relative">
-        <li><a href="#start" class="nav-link">Start</a></li>
-        <li><a href="#raeume" class="nav-link">Räume</a></li>
-        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        <!-- Desktop Navigation mit stabiler Hoverfläche -->
+        <ul class="hidden md:flex space-x-6 font-medium text-white nav-links relative">
+          <li><a href="#start" class="nav-link">Start</a></li>
+          <li><a href="#raeume" class="nav-link">Räume</a></li>
+          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
 
-        <!-- Fixiertes Dropdown -->
-        <li class="relative group">
-          <div class="nav-link cursor-pointer text-white">Vermietung ▾</div>
-          <div class="absolute left-0 top-full pt-3 w-48 z-50">
-            <div class="bg-white rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-out">
-              <a href="/buchung.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Räume</a>
-              <a href="/geraete.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Geräte</a>
+          <!-- Fixiertes Dropdown -->
+          <li class="relative group">
+            <div class="nav-link cursor-pointer text-white">Vermietung ▾</div>
+            <div class="absolute left-0 top-full pt-3 w-48 z-50">
+              <div class="bg-white rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-out">
+                <a href="/buchung.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Räume</a>
+                <a href="/geraete.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Geräte</a>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
+        </ul>
 
-        <!-- Mobile Button -->
-        <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none transition-colors duration-300">
+        <!-- ✅ Mobile Burger-Button – gehört NICHT in die <ul> -->
+        <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">
           ☰
         </button>
       </nav>
@@ -55,6 +58,7 @@
         </li>
       </ul>
     </header>
+
 
     <!-- Hero Section -->
     <section id="start" class="min-h-[70vh] relative flex items-center justify-center">
