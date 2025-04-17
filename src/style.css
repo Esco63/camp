@@ -30,6 +30,11 @@ body {
   @apply w-full;
 }
 
+.nav-links li ul {
+  transition: all 0.3s ease-in-out;
+}
+
+
 /* Mobile Menü */
 #mobile-menu.hidden {
   display: none;

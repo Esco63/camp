@@ -10,29 +10,55 @@
 
     <!-- Navbar -->
     <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300 ease-in-out">
-      <nav class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
-        <div class="text-white text-2xl font-bold tracking-wide glow-text">Camp Schwerin</div>
-        <ul class="hidden md:flex space-x-6 font-medium text-white nav-links">
-          <li><a href="index.html#start" class="nav-link">Start</a></li>
-          <li><a href="index.html#raeume" class="nav-link">Räume</a></li>
-          <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
-          <li><a href="buchung.html" class="nav-link">Raumvermietung</a></li>
-          <li><a href="vermietung.html" class="nav-link text-pink-400">Geräte</a></li>
+        <nav class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between transition-colors duration-300 ease-in-out">
+          <div class="text-white text-2xl font-bold tracking-wide glow-text">Camp Schwerin</div>
+  
+        <!-- Desktop Navigation mit stabiler Hoverfläche -->
+        <ul class="hidden md:flex space-x-6 font-medium text-white nav-links relative">
+          <li><a href="/index.html#start" class="nav-link">Start</a></li>
+          <li><a href="/index.html#raeume" class="nav-link">Räume</a></li>
+          <li><a href="/index.html#kontakt" class="nav-link">Kontakt</a></li>
+  
+          <!-- Fixiertes Dropdown -->
+          <li class="relative group">
+            <div class="nav-link cursor-pointer text-white">Vermietung ▾</div>
+            <div class="absolute left-0 top-full pt-3 w-48 z-50">
+              <div class="bg-white rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-out">
+                <a href="/buchung.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Räume</a>
+                <a href="/geräte.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Geräte</a>
+              </div>
+            </div>
+          </li>
+  
+          <!-- Mobile Button -->
+          <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none transition-colors duration-300">
+            ☰
+          </button>
+        </nav>
+  
+        <!-- Mobile Navigation -->
+        <ul id="mobile-menu" class="hidden md:hidden flex-col absolute top-20 left-0 w-full bg-white text-gray-800 font-medium nav-links px-6 py-4 space-y-4 z-50">
+          <li><a href="/index.html#start" class="nav-link">Start</a></li>
+          <li><a href="/index.html#raeume" class="nav-link">Räume</a></li>
+          <li><a href="/index.html#kontakt" class="nav-link">Kontakt</a></li>
+          
+          <!-- Mobile Dropdown -->
+          <li>
+            <button id="vermietung-toggle" class="w-full text-left nav-link flex justify-between items-center">
+              Vermietung
+              <span>▾</span>
+            </button>
+            <ul id="vermietung-submenu" class="hidden pl-4 mt-2 space-y-2">
+              <li><a href="/buchung.html" class="block">Räume</a></li>
+              <li><a href="/geräte.html" class="block">Geräte</a></li>
+            </ul>
+          </li>
         </ul>
-        <button id="menu-toggle" class="md:hidden text-white text-3xl">☰</button>
-      </nav>
-      <ul id="mobile-menu" class="hidden md:hidden flex-col absolute top-20 left-0 w-full bg-white text-gray-800 px-6 py-4 space-y-4 z-50">
-        <li><a href="index.html#start" class="nav-link">Start</a></li>
-        <li><a href="index.html#raeume" class="nav-link">Räume</a></li>
-        <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
-        <li><a href="buchung.html" class="nav-link">Raumvermietung</a></li>
-        <li><a href="vermietung.html" class="nav-link">Geräte</a></li>
-      </ul>
-    </header>
+      </header>
 
     <!-- Hero -->
     <section class="min-h-[70vh] relative flex items-center justify-center">
-      <img src="/src/assets/images/landing.png" alt="Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+      <img src="/src/assets/images/geraete.png" alt="Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
       <div class="relative z-10 text-center px-6">
         <h1 class="text-5xl md:text-6xl font-extrabold text-white glow-text">Gerätevermietung</h1>
         <p class="mt-4 text-xl text-pink-300">Alles für dein Event – unkompliziert & professionell</p>
@@ -49,27 +75,27 @@
       <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
         <!-- Gerät 1 -->
         <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
-          <img src="/assets/geraet1.jpg" alt="Airhockey" class="w-full h-56 object-cover" />
+          <img src="/assets/geraete/waermer.png" alt="Airhockey" class="w-full h-56 object-cover" />
           <div class="p-6 text-left">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Airhockey-Tisch</h3>
-            <p class="text-gray-600 mb-4">Perfekt für Pausen oder Kindergeburtstage. Maße: 180 × 90 cm.</p>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Chafing-Dish</h3>
+            <p class="text-gray-600 mb-4">Perfekt für große Veranstaltungen usw..</p>
             <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md">Jetzt anfragen</a>
           </div>
         </div>
 
         <!-- Gerät 2 -->
         <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
-          <img src="/assets/geraet2.jpg" alt="Soundanlage" class="w-full h-56 object-cover" />
+          <img src="/assets/geraete/mikro.png" alt="Soundanlage" class="w-full h-56 object-cover" />
           <div class="p-6 text-left">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Mobiler Lautsprecher</h3>
-            <p class="text-gray-600 mb-4">Inkl. Mikrofon & Bluetooth. Ideal für Reden, Musik & Outdoor-Events.</p>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Mikrophone</h3>
+            <p class="text-gray-600 mb-4">Inkl. Lautsprecher. Ideal für Reden, Musik & Outdoor-Events.</p>
             <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md">Jetzt anfragen</a>
           </div>
         </div>
 
         <!-- Gerät 3 -->
         <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
-          <img src="/assets/geraet3.jpg" alt="Kaffeemaschine" class="w-full h-56 object-cover" />
+          <img src="/assets/geraete/kaffee.png" alt="Kaffeemaschine" class="w-full h-56 object-cover" />
           <div class="p-6 text-left">
             <h3 class="text-xl font-bold text-gray-800 mb-2">Industrie-Kaffeemaschine</h3>
             <p class="text-gray-600 mb-4">Für bis zu 80 Tassen. Ideal bei großen Feiern, Tagungen & Buffets.</p>
@@ -94,7 +120,7 @@
             <li><a href="index.html#start" class="hover:text-pink-400">Start</a></li>
             <li><a href="index.html#raeume" class="hover:text-pink-400">Räume</a></li>
             <li><a href="buchung.html" class="hover:text-pink-400">Raumvermietung</a></li>
-            <li><a href="vermietung.html" class="hover:text-pink-400">Gerätevermietung</a></li>
+            <li><a href="vermietung.html" class="hover:text-pink-400">Vermietung</a></li>
           </ul>
         </div>
         <div>
