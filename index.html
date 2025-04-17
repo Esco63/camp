@@ -32,7 +32,7 @@
         <li><a href="#start" class="nav-link">Start</a></li>
         <li><a href="#raeume" class="nav-link">Räume</a></li>
         <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
-        <li><a href="buchung/" class="nav-link text-pink-500">Buchung</a></li>
+        <a href="/buchung.html">Buchung</a>
       </ul>
     </header>
 
@@ -193,6 +193,23 @@
       const menu = document.getElementById('mobile-menu');
       toggle?.addEventListener('click', () => {
         menu.classList.toggle('hidden');
+      });
+    </script>
+
+    <script>
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('nav');
+        const burger = document.getElementById('menu-toggle');
+    
+        if (window.scrollY > 50) {
+          navbar.classList.add('bg-white');
+          burger.classList.remove('text-white');
+          burger.classList.add('text-pink-500'); // Tailwind: rosa
+        } else {
+          navbar.classList.remove('bg-white');
+          burger.classList.remove('text-pink-500');
+          burger.classList.add('text-white');
+        }
       });
     </script>
 
