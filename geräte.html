@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerätevermietung – Camp Schwerin</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-900 font-sans relative overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300 ease-in-out">
+      <nav class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
+        <div class="text-white text-2xl font-bold tracking-wide glow-text">Camp Schwerin</div>
+        <ul class="hidden md:flex space-x-6 font-medium text-white nav-links">
+          <li><a href="index.html#start" class="nav-link">Start</a></li>
+          <li><a href="index.html#raeume" class="nav-link">Räume</a></li>
+          <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
+          <li><a href="buchung.html" class="nav-link">Raumvermietung</a></li>
+          <li><a href="vermietung.html" class="nav-link text-pink-400">Geräte</a></li>
+        </ul>
+        <button id="menu-toggle" class="md:hidden text-white text-3xl">☰</button>
+      </nav>
+      <ul id="mobile-menu" class="hidden md:hidden flex-col absolute top-20 left-0 w-full bg-white text-gray-800 px-6 py-4 space-y-4 z-50">
+        <li><a href="index.html#start" class="nav-link">Start</a></li>
+        <li><a href="index.html#raeume" class="nav-link">Räume</a></li>
+        <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
+        <li><a href="buchung.html" class="nav-link">Raumvermietung</a></li>
+        <li><a href="vermietung.html" class="nav-link">Geräte</a></li>
+      </ul>
+    </header>
+
+    <!-- Hero -->
+    <section class="min-h-[70vh] relative flex items-center justify-center">
+      <img src="/src/assets/images/landing.png" alt="Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+      <div class="relative z-10 text-center px-6">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white glow-text">Gerätevermietung</h1>
+        <p class="mt-4 text-xl text-pink-300">Alles für dein Event – unkompliziert & professionell</p>
+      </div>
+    </section>
+
+    <!-- Geräteübersicht -->
+    <section class="py-24 px-6 bg-white">
+      <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">Unsere Geräte</h2>
+        <p class="text-gray-600 text-lg">Miete Eventzubehör, Technik & Ausstattung – ganz einfach online anfragen.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        <!-- Gerät 1 -->
+        <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
+          <img src="/assets/geraet1.jpg" alt="Airhockey" class="w-full h-56 object-cover" />
+          <div class="p-6 text-left">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Airhockey-Tisch</h3>
+            <p class="text-gray-600 mb-4">Perfekt für Pausen oder Kindergeburtstage. Maße: 180 × 90 cm.</p>
+            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md">Jetzt anfragen</a>
+          </div>
+        </div>
+
+        <!-- Gerät 2 -->
+        <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
+          <img src="/assets/geraet2.jpg" alt="Soundanlage" class="w-full h-56 object-cover" />
+          <div class="p-6 text-left">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Mobiler Lautsprecher</h3>
+            <p class="text-gray-600 mb-4">Inkl. Mikrofon & Bluetooth. Ideal für Reden, Musik & Outdoor-Events.</p>
+            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md">Jetzt anfragen</a>
+          </div>
+        </div>
+
+        <!-- Gerät 3 -->
+        <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
+          <img src="/assets/geraet3.jpg" alt="Kaffeemaschine" class="w-full h-56 object-cover" />
+          <div class="p-6 text-left">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Industrie-Kaffeemaschine</h3>
+            <p class="text-gray-600 mb-4">Für bis zu 80 Tassen. Ideal bei großen Feiern, Tagungen & Buffets.</p>
+            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md">Jetzt anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold text-white glow-text mb-4">Camp Schwerin</h3>
+          <p class="text-sm">
+            Geräte & Räume für Events in Schwerin – unkompliziert & professionell mieten.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html#start" class="hover:text-pink-400">Start</a></li>
+            <li><a href="index.html#raeume" class="hover:text-pink-400">Räume</a></li>
+            <li><a href="buchung.html" class="hover:text-pink-400">Raumvermietung</a></li>
+            <li><a href="vermietung.html" class="hover:text-pink-400">Gerätevermietung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Kontakt</h4>
+          <p class="text-sm">
+            Das Camp Veranstaltungsräume<br />
+            Werkstraße 114<br />
+            19061 Schwerin<br /><br />
+            <strong>E-Mail:</strong> info@camp-schwerin.de<br />
+            <strong>Tel:</strong> 0385 12345678
+          </p>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+        &copy; 2025 Camp Schwerin – Alle Rechte vorbehalten
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      toggle?.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+
+      // Scroll Navbar
+      window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        const burger = document.getElementById('menu-toggle');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        if (window.scrollY > 50) {
+          navbar.classList.add('bg-white', 'shadow-md');
+          navbar.classList.remove('bg-transparent');
+          burger.classList.remove('text-white');
+          burger.classList.add('text-pink-500');
+          navLinks.forEach(link => {
+            link.classList.remove('text-white');
+            link.classList.add('text-gray-900');
+          });
+        } else {
+          navbar.classList.remove('bg-white', 'shadow-md');
+          navbar.classList.add('bg-transparent');
+          burger.classList.remove('text-pink-500');
+          burger.classList.add('text-white');
+          navLinks.forEach(link => {
+            link.classList.remove('text-gray-900');
+            link.classList.add('text-white');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

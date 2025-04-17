@@ -2,7 +2,8 @@
 export default {
   content: [
     "./index.html",
-    "./buchung/index.html",       // NEU
+    "./buchung/index.html",
+    "./geräte.html",       // NEU
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
