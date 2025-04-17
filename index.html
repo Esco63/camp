@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camp Schwerin</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-900 font-sans relative overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300 ease-in-out">
+      <nav class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
+        <div class="text-white text-2xl font-bold tracking-wide glow-text">Camp Schwerin</div>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex space-x-6 font-medium text-white nav-links">
+          <li><a href="#start" class="nav-link">Start</a></li>
+          <li><a href="#raeume" class="nav-link">Räume</a></li>
+          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+          <li><a href="/buchung.html" class="nav-link">Buchung</a></li>
+        </ul>
+
+        <!-- Mobile Button -->
+        <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">
+          ☰
+        </button>
+      </nav>
+
+      <!-- Mobile Navigation -->
+      <ul id="mobile-menu" class="hidden md:hidden flex-col absolute top-20 left-0 w-full bg-white text-gray-800 font-medium nav-links px-6 py-4 space-y-4 z-50">
+        <li><a href="#start" class="nav-link">Start</a></li>
+        <li><a href="#raeume" class="nav-link">Räume</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        <li><a href="/buchung.html" class="nav-link">Buchung</a></li>
+      </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="start" class="min-h-[70vh] relative flex items-center justify-center">
+      <img src="/src/assets/images/landing.png" alt="Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+      <div class="relative z-10 text-center px-6">
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white glow-text">Dein Event, Dein Ort</h1>
+        <p class="mt-4 text-xl md:text-2xl text-pink-300">Deine unvergessliche Momente</p>
+        <a href="/buchung.html" class="mt-8 inline-block px-8 py-4 bg-pink-500 text-white rounded-full text-lg font-semibold hover:bg-pink-400 transition-all shadow-lg animate-pulse-glow">
+          Jetzt anfragen
+        </a>
+      </div>
+    </section>
+
+    <!-- Sektion: Räume -->
+    <section id="raeume" class="py-24 px-6 bg-white">
+      <div class="max-w-6xl mx-auto text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">Unsere Räume</h2>
+        <p class="text-gray-600 text-lg">Ob Hochzeit, Seminar oder Party – wir haben die passende Location.</p>
+      </div>
+
+      <!-- Raum 1 -->
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 items-center text-center md:text-left justify-items-center mb-24">
+        <div class="md:pr-8">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Großer Saal</h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Ideal für größere Veranstaltungen mit bis zu 120 Personen. Inkl. Bühne, Musikanlage und festlicher Beleuchtung.
+          </p>
+        </div>
+        <div class="relative w-full h-[400px] md:h-[460px] max-w-none mx-[-2rem] md:mx-[-4rem] overflow-hidden rounded-2xl shadow-2xl">
+          <div id="slider1" class="w-full h-full relative">
+            <div class="slide1 absolute inset-0 transition-opacity duration-700 opacity-100">
+              <img src="/src/assets/images/raum10/1a.png" class="w-full h-full object-cover object-center rounded-2xl" />
+            </div>
+            <div class="slide1 absolute inset-0 transition-opacity duration-700 opacity-0">
+              <img src="/src/assets/images/raum10/1b.png" class="w-full h-full object-cover object-center rounded-2xl" />
+            </div>
+            <div class="slide1 absolute inset-0 transition-opacity duration-700 opacity-0">
+              <img src="/src/assets/images/raum10/1c.png" class="w-full h-full object-cover object-center rounded-2xl" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Raum 2 -->
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 items-center text-center md:text-left justify-items-center">
+        <div class="relative w-full h-[400px] md:h-[460px] max-w-none mx-[-2rem] md:mx-[-4rem] overflow-hidden rounded-2xl shadow-2xl">
+          <div id="slider2" class="w-full h-full relative">
+            <div class="slide2 absolute inset-0 transition-opacity duration-700 opacity-100">
+              <img src="/src/assets/images/raum10/1a.png" class="w-full h-full object-cover object-center rounded-2xl" />
+            </div>
+            <div class="slide2 absolute inset-0 transition-opacity duration-700 opacity-0">
+              <img src="/src/assets/images/raum10/1b.png" class="w-full h-full object-cover object-center rounded-2xl" />
+            </div>
+            <div class="slide2 absolute inset-0 transition-opacity duration-700 opacity-0">
+              <img src="/src/assets/images/raum10/1c.png" class="w-full h-full object-cover object-center rounded-2xl" />
+            </div>
+          </div>
+        </div>
+        <div class="md:pl-8">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Seminarraum</h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Ideal für kleinere Veranstaltungen mit bis zu 70 Personen. Inkl. Whiteboard, Leinwand und flexible Bestuhlung.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontaktbereich -->
+    <section id="kontakt" class="py-24 px-6 bg-gray-100">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">Kontakt</h2>
+          <p class="text-gray-600 text-lg">Fragen? Schreib uns direkt – wir freuen uns auf dich!</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Formular -->
+          <form class="bg-white p-8 rounded-2xl shadow-lg space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+              <input type="text" placeholder="Max Mustermann"
+                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">E-Mail</label>
+              <input type="email" placeholder="deine@email.de"
+                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Nachricht</label>
+              <textarea rows="5" placeholder="Wie können wir helfen?"
+                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full bg-pink-500 hover:bg-pink-400 text-white font-semibold py-3 rounded-xl transition-all shadow-md">
+              Nachricht senden
+            </button>
+          </form>
+
+          <!-- Kontaktinfos -->
+          <div class="bg-white p-8 rounded-2xl shadow-lg space-y-6 text-gray-700">
+            <div>
+              <h3 class="text-xl font-semibold mb-2 text-gray-800">Adresse</h3>
+              <p>Das Camp Veranstaltungsräume<br />Werkstraße 114<br />19061 Schwerin</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2 text-gray-800">Kontakt</h3>
+              <p><strong>E-Mail:</strong> info@camp-schwerin.de<br />
+                <strong>Telefon:</strong> 0385 12345678</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2 text-gray-800">Öffnungszeiten</h3>
+              <p>Mo–Fr: 09:00 – 18:00<br />Sa: 10:00 – 14:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-20">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold text-white glow-text mb-4">Camp Schwerin</h3>
+          <p class="text-sm">
+            Deine Eventlocation in Schwerin – modern, flexibel und persönlich. Räume für jeden Anlass.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#start" class="hover:text-pink-400 transition">Start</a></li>
+            <li><a href="#raeume" class="hover:text-pink-400 transition">Räume</a></li>
+            <li><a href="#kontakt" class="hover:text-pink-400 transition">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Kontakt</h4>
+          <p class="text-sm">
+            Das Camp Veranstaltungsräume<br />
+            Werkstraße 114<br />
+            19061 Schwerin<br /><br />
+            <strong>E-Mail:</strong> info@camp-schwerin.de<br />
+            <strong>Tel:</strong> 0385 12345678
+          </p>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+        &copy; 2025 Camp Schwerin – Alle Rechte vorbehalten
+      </div>
+    </footer>
+
+    <!-- Mobile Toggle Script -->
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      toggle?.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    </script>
+
+    <!-- Scroll Navbar Script -->
+    <script>
+      window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 80) {
+          navbar.classList.add('bg-white', 'shadow-md');
+          navbar.classList.remove('bg-transparent');
+          navbar.querySelectorAll('.nav-link').forEach(el => el.classList.add('text-gray-900'));
+        } else {
+          navbar.classList.remove('bg-white', 'shadow-md');
+          navbar.classList.add('bg-transparent');
+          navbar.querySelectorAll('.nav-link').forEach(el => el.classList.remove('text-gray-900'));
+        }
+      });
+    </script>
+
+    <!-- Slider -->
+    <script>
+      function initSlider(slideClass, interval = 4000) {
+        const slides = document.querySelectorAll('.' + slideClass);
+        let current = 0;
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? '1' : '0';
+          });
+        }
+        setInterval(() => {
+          current = (current + 1) % slides.length;
+          showSlide(current);
+        }, interval);
+      }
+      initSlider('slide1');
+      initSlider('slide2');
+    </script>
+  </body>
+</html>

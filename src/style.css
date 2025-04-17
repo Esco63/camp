@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Grundstruktur */
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f3f4f6; /* Tailwind: gray-100 */
+}
+
+/* Glow Effekt */
+.glow-text {
+  text-shadow: 0 0 6px rgba(236, 72, 153, 0.4), 0 0 12px rgba(236, 72, 153, 0.3);
+}
+
+/* Navigation Hover & Underline */
+.nav-link {
+  @apply hover:text-pink-500 transition duration-300 relative;
+}
+
+.nav-link::after {
+  content: "";
+  @apply block h-0.5 bg-pink-500 w-0 transition-all duration-300 ease-in-out absolute left-0 -bottom-1;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Mobile Menü */
+#mobile-menu.hidden {
+  display: none;
+}
+
+/* Button Glow Animation */
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px #ec4899;
+  }
+  50% {
+    box-shadow: 0 0 25px #ec4899;
+  }
+}
+
+/* Footer Styling */
+footer a {
+  @apply transition duration-300;
+}
+
+footer a:hover {
+  @apply text-pink-400;
+}
+
+/* Formular Fokus Effekt */
+input:focus,
+textarea:focus,
+select:focus {
+  @apply ring-2 ring-pink-400 outline-none;
+}
+
+/* Glass-Form Container */
+.glass-form {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs + Textareas = glassy */
+input,
+textarea,
+select {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.75rem;
+}
+
+/* Weichere Ränder für Formulare */
+form {
+  border-radius: 1.25rem; /* entspricht rounded-2xl */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Animation für weiches Einblenden */
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Press Effekt */
+button,
+a.button {
+  transition: transform 0.2s ease;
+}
+
+button:active,
+a.button:active {
+  transform: scale(0.98);
+}
+
+/* Navbar Scroll Effekt */
+#navbar {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+#navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+#navbar.scrolled .nav-link {
+  @apply text-gray-900;
+}
+
+/* Scrollbar Styling (optional) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(236, 72, 153, 0.4);
+  border-radius: 8px;
+}
