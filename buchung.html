@@ -46,8 +46,8 @@
             <div class="nav-link cursor-pointer text-white">Vermietung ▾</div>
             <div class="absolute left-0 top-full pt-3 w-48 z-50">
               <div class="bg-white rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-out">
-                <a href="/buchung.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Räume</a>
-                <a href="/geraete.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Geräte</a>
+                <a href="/buchung.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Eventräume</a>
+                <a href="/geraete.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Eventausstattung</a>
               </div>
             </div>
           </li>
@@ -72,8 +72,8 @@
             <span>▾</span>
           </button>
           <ul id="vermietung-submenu" class="hidden pl-4 mt-2 space-y-2">
-            <li><a href="/buchung.html" class="block">Räume</a></li>
-            <li><a href="/geraete.html" class="block">Geräte</a></li> <!-- 🔧 FIX: vorher 'geraeäte.html' -->
+            <li><a href="/buchung.html" class="block">Eventräume</a></li>
+            <li><a href="/geraete.html" class="block">Eventausstattung</a></li> <!-- 🔧 FIX: vorher 'geraeäte.html' -->
           </ul>
         </li>
       </ul>
@@ -163,6 +163,8 @@
             <li><a href="/index.html#start" class="hover:text-pink-400 transition">Start</a></li>
             <li><a href="/index.html#raeume" class="hover:text-pink-400 transition">Räume</a></li>
             <li><a href="/index.html#kontakt" class="hover:text-pink-400 transition">Kontakt</a></li>
+            <li><a href="/buchung.html" class="hover:text-pink-400 transition">Eventräume</a></li>
+            <li><a href="/geraete.html" class="hover:text-pink-400 transition">Evenausstattung</a></li>
           </ul>
         </div>
         <div>
@@ -181,20 +183,50 @@
       </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-      // Mobile Menü Toggle
+      // Mobile Menu Toggle
       const toggle = document.getElementById('menu-toggle');
       const menu = document.getElementById('mobile-menu');
       toggle?.addEventListener('click', () => {
         menu.classList.toggle('hidden');
       });
     
-      // Mobile Dropdown Toggle
+      // Mobile Submenu Toggle
       const vermietungToggle = document.getElementById('vermietung-toggle');
       const vermietungSubmenu = document.getElementById('vermietung-submenu');
+    
       vermietungToggle?.addEventListener('click', () => {
         vermietungSubmenu.classList.toggle('hidden');
+      });
+    
+      // Scroll Effect Navbar (nur Desktop-Links werden angepasst)
+      window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        const burger = document.getElementById('menu-toggle');
+    
+        // Nur Desktop-Navigation auswählen
+        const desktopNav = document.querySelector('.nav-links');
+        const navLinks = desktopNav?.querySelectorAll('.nav-link') ?? [];
+    
+        if (window.scrollY > 50) {
+          navbar.classList.add('bg-white', 'shadow-md');
+          navbar.classList.remove('bg-transparent');
+          burger.classList.remove('text-white');
+          burger.classList.add('text-pink-500');
+          navLinks.forEach(link => {
+            link.classList.remove('text-white');
+            link.classList.add('text-gray-900');
+          });
+        } else {
+          navbar.classList.remove('bg-white', 'shadow-md');
+          navbar.classList.add('bg-transparent');
+          burger.classList.remove('text-pink-500');
+          burger.classList.add('text-white');
+          navLinks.forEach(link => {
+            link.classList.remove('text-gray-900');
+            link.classList.add('text-white');
+          });
+        }
       });
     </script>
   </body>

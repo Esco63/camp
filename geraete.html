@@ -17,17 +17,17 @@
 
         <!-- Desktop Navigation mit Dropdown -->
         <ul class="hidden md:flex space-x-6 font-medium text-white nav-links relative">
-          <li><a href="#start" class="nav-link">Start</a></li>
-          <li><a href="#raeume" class="nav-link">Räume</a></li>
-          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+          <li><a href="/index.html#start" class="nav-link">Start</a></li>
+          <li><a href="/index.html#raeume" class="nav-link">Räume</a></li>
+          <li><a href="/index.html#kontakt" class="nav-link">Kontakt</a></li>
 
           <!-- Dropdown für Vermietung -->
           <li class="relative group">
             <div class="nav-link cursor-pointer text-white">Vermietung ▾</div>
             <div class="absolute left-0 top-full pt-3 w-48 z-50">
               <div class="bg-white rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-out">
-                <a href="/buchung.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Räume</a>
-                <a href="/geraete.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Geräte</a>
+                <a href="/buchung.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Eventräume</a>
+                <a href="/geraete.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Eventausstattung</a>
               </div>
             </div>
           </li>
@@ -41,9 +41,9 @@
 
       <!-- Mobile Navigation -->
       <ul id="mobile-menu" class="hidden md:hidden flex-col absolute top-20 left-0 w-full bg-white text-gray-800 font-medium nav-links px-6 py-4 space-y-4 z-50">
-        <li><a href="#start" class="nav-link">Start</a></li>
-        <li><a href="#raeume" class="nav-link">Räume</a></li>
-        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        <li><a href="/index.html#start" class="nav-link">Start</a></li>
+        <li><a href="/index.html#raeume" class="nav-link">Räume</a></li>
+        <li><a href="/index.html#kontakt" class="nav-link">Kontakt</a></li>
 
         <!-- Mobile Dropdown -->
         <li>
@@ -52,8 +52,8 @@
             <span>▾</span>
           </button>
           <ul id="vermietung-submenu" class="hidden pl-4 mt-2 space-y-2">
-            <li><a href="/buchung.html" class="block">Räume</a></li>
-            <li><a href="/geraete.html" class="block">Geräte</a></li>
+            <li><a href="/buchung.html" class="block">Eventräume</a></li>
+            <li><a href="/geraete.html" class="block">Eventausstattung</a></li>
           </ul>
         </li>
       </ul>
@@ -76,38 +76,40 @@
         <p class="text-gray-600 text-lg">Miete Eventzubehör, Technik & Ausstattung – ganz einfach online anfragen.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-x-12 gap-y-10 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-x-16 gap-y-12 max-w-6xl mx-auto px-6">
         <!-- Gerät 1 -->
-        <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
-          <img src="/assets/geraete/waermer.png" alt="Airhockey" class="w-full h-56 object-cover" />
-          <div class="p-6 text-left">
+        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 p-3 overflow-hidden">
+          <img src="/assets/geraete/waermer.png" alt="Airhockey" class="w-full h-56 object-cover rounded-xl" />
+          <div class="p-5 text-left">
             <h3 class="text-xl font-bold text-gray-800 mb-2">Chafing-Dish</h3>
             <p class="text-gray-600 mb-4">Perfekt für große Veranstaltungen usw..</p>
-            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md">Jetzt anfragen</a>
+            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md drop-shadow-glow">Jetzt anfragen</a>
           </div>
         </div>
-
+      
         <!-- Gerät 2 -->
-        <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
-          <img src="/assets/geraete/mikro.png" alt="Soundanlage" class="w-full h-56 object-cover" />
-          <div class="p-6 text-left">
+        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 p-3 overflow-hidden">
+          <img src="/assets/geraete/mikro.png" alt="Soundanlage" class="w-full h-56 object-cover rounded-xl" />
+          <div class="p-5 text-left">
             <h3 class="text-xl font-bold text-gray-800 mb-2">Mikrophone</h3>
             <p class="text-gray-600 mb-4">Inkl. Lautsprecher. Ideal für Reden, Musik & Outdoor-Events.</p>
-            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md">Jetzt anfragen</a>
+            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md drop-shadow-glow">Jetzt anfragen</a>
           </div>
         </div>
-
+      
         <!-- Gerät 3 -->
-        <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
-          <img src="/assets/geraete/kaffee.png" alt="Kaffeemaschine" class="w-full h-56 object-cover" />
-          <div class="p-6 text-left">
+        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 p-3 overflow-hidden">
+          <img src="/assets/geraete/kaffee.png" alt="Kaffeemaschine" class="w-full h-56 object-cover rounded-xl" />
+          <div class="p-5 text-left">
             <h3 class="text-xl font-bold text-gray-800 mb-2">Industrie-Kaffeemaschine</h3>
             <p class="text-gray-600 mb-4">Für bis zu 80 Tassen. Ideal bei großen Feiern, Tagungen & Buffets.</p>
-            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md">Jetzt anfragen</a>
+            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md drop-shadow-glow">Jetzt anfragen</a>
           </div>
         </div>
       </div>
+      
     </section>
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
@@ -121,10 +123,11 @@
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Navigation</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="index.html#start" class="hover:text-pink-400">Start</a></li>
-            <li><a href="index.html#raeume" class="hover:text-pink-400">Räume</a></li>
-            <li><a href="buchung.html" class="hover:text-pink-400">Raumvermietung</a></li>
-            <li><a href="vermietung.html" class="hover:text-pink-400">Vermietung</a></li>
+            <li><a href="/index.html#start" class="hover:text-pink-400 transition">Start</a></li>
+            <li><a href="/index.html#raeume" class="hover:text-pink-400 transition">Räume</a></li>
+            <li><a href="/index.html#kontakt" class="hover:text-pink-400 transition">Kontakt</a></li>
+            <li><a href="/buchung.html" class="hover:text-pink-400 transition">Eventräume</a></li>
+            <li><a href="/geraete.html" class="hover:text-pink-400 transition">Evenausstattung</a></li>
           </ul>
         </div>
         <div>
@@ -144,26 +147,30 @@
     </footer>
 
     <script>
-      // Mobile Menü Toggle
+      // Mobile Menu Toggle
       const toggle = document.getElementById('menu-toggle');
       const menu = document.getElementById('mobile-menu');
       toggle?.addEventListener('click', () => {
         menu.classList.toggle('hidden');
       });
-
-      // Mobile Dropdown Toggle
+    
+      // Mobile Submenu Toggle
       const vermietungToggle = document.getElementById('vermietung-toggle');
       const vermietungSubmenu = document.getElementById('vermietung-submenu');
+    
       vermietungToggle?.addEventListener('click', () => {
         vermietungSubmenu.classList.toggle('hidden');
       });
-
-      // Scroll Navbar
+    
+      // Scroll Effect Navbar (nur Desktop-Links werden angepasst)
       window.addEventListener('scroll', () => {
         const navbar = document.getElementById('navbar');
         const burger = document.getElementById('menu-toggle');
-        const navLinks = document.querySelectorAll('.nav-link');
-
+    
+        // Nur Desktop-Navigation auswählen
+        const desktopNav = document.querySelector('.nav-links');
+        const navLinks = desktopNav?.querySelectorAll('.nav-link') ?? [];
+    
         if (window.scrollY > 50) {
           navbar.classList.add('bg-white', 'shadow-md');
           navbar.classList.remove('bg-transparent');
