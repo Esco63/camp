@@ -60,62 +60,79 @@
     </header>
 
 
-    <!-- Hero -->
-    <section class="min-h-[70vh] relative flex items-center justify-center">
-      <img src="/src/assets/images/geraete.png" alt="Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
-      <div class="relative z-10 text-center px-6">
-        <h1 class="text-5xl md:text-6xl font-extrabold text-white glow-text">Gerätevermietung</h1>
-        <p class="mt-4 text-xl text-pink-300">Alles für dein Event – unkompliziert & professionell</p>
-      </div>
-    </section>
-
-    <!-- Geräteübersicht -->
     <section class="py-24 px-6 bg-white">
       <div class="max-w-7xl mx-auto text-center mb-16">
         <h2 class="text-4xl font-bold text-gray-800 mb-4">Unsere Geräte</h2>
         <p class="text-gray-600 text-lg">Miete Eventzubehör, Technik & Ausstattung – ganz einfach online anfragen.</p>
       </div>
-
-      <!-- Flex statt Grid mit angepasstem Abstand -->
-      <div class="flex flex-wrap justify-between gap-x-gap-x-custom gap-y-gap-y-custom px-6 lg:px-20">
-        <!-- Gerät 1 -->
-        <div class="w-full md:w-[350px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 p-6 overflow-hidden">
-          <div class="w-full h-64 overflow-hidden">
-            <img src="/assets/geraete/waermer.png" alt="Airhockey" class="w-full h-full object-cover rounded-xl" />
+    
+      <!-- Scrollbarer Container mit Pfeilen -->
+      <div class="relative">
+        <div class="flex overflow-x-auto space-x-8 pb-8 px-6 md:px-20 snap-x snap-mandatory">
+          <!-- Gerät 1 -->
+          <div class="w-[350px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 p-6 overflow-hidden snap-center">
+            <div class="w-full h-64 overflow-hidden">
+              <img src="/assets/geraete/waermer.png" alt="Chafing Dish" class="w-full h-full object-cover rounded-xl" />
+            </div>
+            <div class="pt-5 text-left">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Chafing-Dish</h3>
+              <p class="text-gray-600 mb-4">Perfekt für große Veranstaltungen usw..</p>
+              <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md drop-shadow-glow">Jetzt anfragen</a>
+            </div>
           </div>
-          <div class="pt-5 text-left">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Chafing-Dish</h3>
-            <p class="text-gray-600 mb-4">Perfekt für große Veranstaltungen usw..</p>
-            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md drop-shadow-glow">Jetzt anfragen</a>
+    
+          <!-- Gerät 2 -->
+          <div class="w-[350px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 p-6 overflow-hidden snap-center">
+            <div class="w-full h-64 overflow-hidden">
+              <img src="/assets/geraete/mikro.png" alt="Mikrophone" class="w-full h-full object-cover rounded-xl" />
+            </div>
+            <div class="pt-5 text-left">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Mikrophone</h3>
+              <p class="text-gray-600 mb-4">Inkl. Lautsprecher. Ideal für Reden, Musik & Outdoor-Events.</p>
+              <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md drop-shadow-glow">Jetzt anfragen</a>
+            </div>
           </div>
+    
+          <!-- Gerät 3 -->
+          <div class="w-[350px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 p-6 overflow-hidden snap-center">
+            <div class="w-full h-64 overflow-hidden">
+              <img src="/assets/geraete/kaffee.png" alt="Industrie Kaffeemaschine" class="w-full h-full object-cover rounded-xl" />
+            </div>
+            <div class="pt-5 text-left">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Industrie-Kaffeemaschine</h3>
+              <p class="text-gray-600 mb-4">Für bis zu 80 Tassen. Ideal bei großen Feiern, Tagungen & Buffets.</p>
+              <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md drop-shadow-glow">Jetzt anfragen</a>
+            </div>
+          </div>
+    
+          <!-- Weitere Geräte können hier hinzugefügt werden -->
         </div>
-
-        <!-- Gerät 2 -->
-        <div class="w-full md:w-[350px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 p-6 overflow-hidden">
-          <div class="w-full h-64 overflow-hidden">
-            <img src="/assets/geraete/mikro.png" alt="Soundanlage" class="w-full h-full object-cover rounded-xl" />
-          </div>
-          <div class="pt-5 text-left">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Mikrophone</h3>
-            <p class="text-gray-600 mb-4">Inkl. Lautsprecher. Ideal für Reden, Musik & Outdoor-Events.</p>
-            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md drop-shadow-glow">Jetzt anfragen</a>
-          </div>
-        </div>
-
-        <!-- Gerät 3 -->
-        <div class="w-full md:w-[350px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 p-6 overflow-hidden">
-          <div class="w-full h-64 overflow-hidden">
-            <img src="/assets/geraete/kaffee.png" alt="Kaffeemaschine" class="w-full h-full object-cover rounded-xl" />
-          </div>
-          <div class="pt-5 text-left">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Industrie-Kaffeemaschine</h3>
-            <p class="text-gray-600 mb-4">Für bis zu 80 Tassen. Ideal bei großen Feiern, Tagungen & Buffets.</p>
-            <a href="buchung.html#kontakt" class="inline-block bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-400 transition shadow-md drop-shadow-glow">Jetzt anfragen</a>
-          </div>
-        </div>
+    
+        <!-- Pfeile zum Navigieren -->
+        <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-pink-500 rounded-full p-2 shadow-md hover:bg-pink-400 transition">
+          &#10094;
+        </button>
+        <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-pink-500 rounded-full p-2 shadow-md hover:bg-pink-400 transition">
+          &#10095;
+        </button>
       </div>
     </section>
-
+    
+    <script>
+      // JavaScript zum Scrollen der Karte
+      const prevButton = document.getElementById('prev');
+      const nextButton = document.getElementById('next');
+      const carousel = document.querySelector('.flex');
+    
+      prevButton.addEventListener('click', () => {
+        carousel.scrollBy({ left: -350, behavior: 'smooth' }); // Scrollt um 350px nach links
+      });
+    
+      nextButton.addEventListener('click', () => {
+        carousel.scrollBy({ left: 350, behavior: 'smooth' }); // Scrollt um 350px nach rechts
+      });
+    </script>
+    
     
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
