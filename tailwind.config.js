@@ -52,15 +52,22 @@ export default {
       },
       spacing: {
         '72': '18rem', // Für größere Container-Breiten
+        '96': '24rem', // Optional: für noch mehr Abstände
       },
       gridTemplateColumns: {
         'custom-3': 'repeat(3, minmax(0, 1fr))', // Für maßgeschneiderte 3-Spalten-Layouts
       },
       width: {
         '300px': '300px', // Feste Breite für Karten
+        '350px': '350px', // Breitere Karten (optional)
       },
       maxWidth: {
         '7xl': '80rem', // Maximale Breite des Containers
+      },
+      spacing: {
+        // Hier den horizontalen Abstand zwischen den Karten festlegen
+        'gap-x-custom': '1.5rem',  // 1.5rem (24px) horizontaler Abstand zwischen den Karten
+        'gap-y-custom': '2rem',    // 2rem (32px) vertikaler Abstand zwischen den Karten
       },
     },
   },
