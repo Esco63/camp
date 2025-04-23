@@ -75,9 +75,11 @@
         <p class="text-gray-600 text-lg">Miete Eventzubehör, Technik & Ausstattung – ganz einfach online anfragen.</p>
       </div>
     
-      <!-- Scrollbarer Container mit Pfeilen -->
-      <div class="relative">
-        <div class="flex overflow-x-auto space-x-8 pb-8 px-6 md:px-20 snap-x snap-mandatory">
+      <!-- Scrollbarer Bereich mit Pfeilen -->
+      <div class="relative max-w-[1800px] mx-auto overflow-hidden group">
+        <!-- Karten-Container -->
+        <div id="carousel" class="flex space-x-8 pb-8 px-6 md:px-20 snap-x snap-mandatory transition-transform duration-500">
+          
           <!-- Gerät 1 -->
           <div class="w-[350px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 p-6 overflow-hidden snap-center">
             <div class="w-full h-64 overflow-hidden">
@@ -188,31 +190,35 @@
     
         </div>
     
-        <!-- Pfeile zum Navigieren -->
-        <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-pink-500 rounded-full p-2 shadow-md hover:bg-pink-400 transition">
+        !-- Pfeil: Zurück -->
+        <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-pink-500 rounded-full p-3 shadow-md hover:bg-pink-400 transition opacity-0 group-hover:opacity-100">
           &#10094;
         </button>
-        <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-pink-500 rounded-full p-2 shadow-md hover:bg-pink-400 transition">
+    
+        <!-- Pfeil: Weiter -->
+        <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-pink-500 rounded-full p-3 shadow-md hover:bg-pink-400 transition opacity-0 group-hover:opacity-100">
           &#10095;
         </button>
       </div>
     </section>
     
+    <!-- JavaScript -->
     <script>
-      // JavaScript zum Scrollen der Karte
       const prevButton = document.getElementById('prev');
       const nextButton = document.getElementById('next');
-      const carousel = document.querySelector('.flex');
+      const carousel = document.getElementById('carousel');
+    
+      const scrollAmount = 1910; // ca. 5 Karten à 350px + Abstand
     
       prevButton.addEventListener('click', () => {
-        carousel.scrollBy({ left: -3150, behavior: 'smooth' }); // Scrollt um die Breite von 9 Karten nach links
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       });
     
       nextButton.addEventListener('click', () => {
-        carousel.scrollBy({ left: 3150, behavior: 'smooth' }); // Scrollt um die Breite von 9 Karten nach rechts
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       });
     </script>
-        
+            
     
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
