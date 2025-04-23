@@ -67,7 +67,7 @@ export default {
       spacing: {
         // Hier den horizontalen Abstand zwischen den Karten festlegen
         'gap-x-custom': '1.5rem',  // 1.5rem (24px) horizontaler Abstand zwischen den Karten
-        'gap-y-custom': '1rem',    // 2rem (32px) vertikaler Abstand zwischen den Karten
+        'gap-y-custom': '2rem',    // 2rem (32px) vertikaler Abstand zwischen den Karten
       },
     },
   },
