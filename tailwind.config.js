@@ -59,7 +59,7 @@ export default {
       },
       width: {
         '300px': '300px', // Feste Breite für Karten
-        '350px': '350px', // Breitere Karten (optional)
+        '350px': '350px', // Breitere Karten
       },
       maxWidth: {
         '7xl': '80rem', // Maximale Breite des Containers
