@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./buchung/index.html",
-    "./geräte.html",       // NEU
+    "./geraete.html",       // NEU
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -49,6 +49,18 @@ export default {
       },
       backgroundImage: {
         'hero-booking': "url('/src/assets/images/buchung.png')",
+      },
+      spacing: {
+        '72': '18rem', // Für größere Container-Breiten
+      },
+      gridTemplateColumns: {
+        'custom-3': 'repeat(3, minmax(0, 1fr))', // Für maßgeschneiderte 3-Spalten-Layouts
+      },
+      width: {
+        '300px': '300px', // Feste Breite für Karten
+      },
+      maxWidth: {
+        '7xl': '80rem', // Maximale Breite des Containers
       },
     },
   },
