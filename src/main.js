@@ -4,8 +4,9 @@ import { submitRaumAnfrage } from './submitRaumAnfrage.js';
 // Formular-Event-Listener
 const form = document.getElementById('raum-form');
 const submitButton = form?.querySelector('button[type="submit"]'); // Den Submit-Button abrufen
+const formMessage = document.getElementById('form-message'); // Referenz auf das Nachrichtendiv
 
-if (form && submitButton) { // Sicherstellen, dass Formular und Button existieren
+if (form && submitButton && formMessage) { // Sicherstellen, dass Formular, Button und Nachrichtenfeld existieren
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -14,6 +15,13 @@ if (form && submitButton) { // Sicherstellen, dass Formular und Button existiere
         const originalButtonText = submitButton.textContent;
         submitButton.textContent = 'Sende Anfrage...';
         submitButton.classList.add('opacity-75', 'cursor-not-allowed'); // Visuelles Feedback für Deaktivierung
+
+        // 2. Sofortige visuelle Bestätigung anzeigen
+        // Zuerst alle potentiellen Status-Klassen entfernen
+        formMessage.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800'); 
+        formMessage.classList.add('bg-blue-100', 'text-blue-800'); // Neutrale Farbe für "wird gesendet"
+        formMessage.textContent = 'Ihre Anfrage wird gesendet... Bitte warten Sie einen Moment.';
+        formMessage.style.display = 'block'; // Sicherstellen, dass es sichtbar ist
 
         const formData = {
             name: form.name.value,
@@ -31,13 +39,16 @@ if (form && submitButton) { // Sicherstellen, dass Formular und Button existiere
             formData.mietauswahl = mietauswahlFeld.value;
         }
 
-
         try {
             const success = await submitRaumAnfrage(formData);
 
+            // Farbe für "wird gesendet" entfernen, bevor neue Farbe gesetzt wird
+            formMessage.classList.remove('bg-blue-100', 'text-blue-800'); 
+
             if (success) {
-                alert('✅ Buchungsanfrage erfolgreich gesendet! Wir melden uns in Kürze bei Ihnen.');
-                form.reset();
+                formMessage.classList.add('bg-green-100', 'text-green-800'); // Erfolgsfarbe
+                formMessage.textContent = '✅ Ihre Buchungsanfrage wurde erfolgreich gesendet! Wir melden uns in Kürze bei Ihnen.';
+                form.reset(); // Formular zurücksetzen
                 localStorage.removeItem('mietauswahl'); // Auswahl nach erfolgreicher Buchung löschen
                 // Verstecke die Auswahl-Box, falls sie sichtbar ist
                 const box = document.getElementById('auswahlBuchung');
@@ -45,20 +56,30 @@ if (form && submitButton) { // Sicherstellen, dass Formular und Button existiere
                     box.style.display = 'none';
                 }
             } else {
-                alert('❌ Es gab ein Problem beim Absenden Ihrer Anfrage. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt.');
+                formMessage.classList.add('bg-red-100', 'text-red-800'); // Fehlerfarbe
+                formMessage.textContent = '❌ Es gab ein Problem beim Absenden Ihrer Anfrage. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt.';
             }
         } catch (error) {
             console.error("Fehler beim Senden der Anfrage:", error);
-            alert('❌ Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es später erneut.');
+            formMessage.classList.remove('bg-blue-100', 'text-blue-800'); // Auch hier Farbe entfernen
+            formMessage.classList.add('bg-red-100', 'text-red-800');
+            formMessage.textContent = '❌ Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es später erneut.';
         } finally {
             // 3. Button wieder aktivieren und ursprünglichen Text wiederherstellen
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
             submitButton.classList.remove('opacity-75', 'cursor-not-allowed');
+
+            // Optional: Nachricht nach einer Zeit ausblenden (z.B. nach 7 Sekunden)
+            setTimeout(() => {
+                formMessage.style.display = 'none'; // Versteckt das Element
+                formMessage.classList.add('hidden'); // Fügt die Tailwind hidden Klasse hinzu
+                formMessage.textContent = ''; // Text leeren
+            }, 7000); 
         }
     });
 
-    // Code für die Mietauswahl anzeigen und löschen (wie zuvor)
+    // Code für die Mietauswahl anzeigen und löschen
     const gespeicherteAuswahl = JSON.parse(localStorage.getItem('mietauswahl') || '[]');
     const liste = document.getElementById('buchungAuswahlListe');
     const gesamtEl = document.getElementById('buchungGesamt');
@@ -89,47 +110,48 @@ if (form && submitButton) { // Sicherstellen, dass Formular und Button existiere
         box.style.display = 'none';
         alert('🗑️ Ihre Auswahl wurde gelöscht.'); // Freundlichere Meldung
     });
-
-    // Mobile Menü Toggle (wie zuvor)
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-    toggle?.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-    });
-
-    // Mobile Submenu Toggle (wie zuvor)
-    const vermietungToggle = document.getElementById('vermietung-toggle');
-    const vermietungSubmenu = document.getElementById('vermietung-submenu');
-
-    vermietungToggle?.addEventListener('click', () => {
-        vermietungSubmenu.classList.toggle('hidden');
-    });
-
-    // Scroll Effect für Navbar (wie zuvor)
-    window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        const burger = document.getElementById('menu-toggle');
-        const desktopNav = document.querySelector('.nav-links');
-        const navLinks = desktopNav?.querySelectorAll('.nav-link') ?? [];
-
-        if (window.scrollY > 50) {
-            navbar.classList.add('bg-white', 'shadow-md');
-            navbar.classList.remove('bg-transparent');
-            burger.classList.remove('text-white');
-            burger.classList.add('text-pink-500');
-            navLinks.forEach(link => {
-                link.classList.remove('text-white');
-                link.classList.add('text-gray-900');
-            });
-        } else {
-            navbar.classList.remove('bg-white', 'shadow-md');
-            navbar.classList.add('bg-transparent');
-            burger.classList.remove('text-pink-500');
-            burger.classList.add('text-white');
-            navLinks.forEach(link => {
-                link.classList.remove('text-gray-900');
-                link.classList.add('text-white');
-            });
-        }
-    });
 }
+
+
+// Mobile Menü Toggle
+const toggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('mobile-menu');
+toggle?.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+});
+
+// Mobile Submenu Toggle
+const vermietungToggle = document.getElementById('vermietung-toggle');
+const vermietungSubmenu = document.getElementById('vermietung-submenu');
+
+vermietungToggle?.addEventListener('click', () => {
+    vermietungSubmenu.classList.toggle('hidden');
+});
+
+// Scroll Effect für Navbar
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    const burger = document.getElementById('menu-toggle');
+    const desktopNav = document.querySelector('.nav-links');
+    const navLinks = desktopNav?.querySelectorAll('.nav-link') ?? [];
+
+    if (window.scrollY > 50) {
+        navbar.classList.add('bg-white', 'shadow-md');
+        navbar.classList.remove('bg-transparent');
+        burger.classList.remove('text-white');
+        burger.classList.add('text-pink-500');
+        navLinks.forEach(link => {
+            link.classList.remove('text-white');
+            link.classList.add('text-gray-900');
+        });
+    } else {
+        navbar.classList.remove('bg-white', 'shadow-md');
+        navbar.classList.add('bg-transparent');
+        burger.classList.remove('text-pink-500');
+        burger.classList.add('text-white');
+        navLinks.forEach(link => {
+            link.classList.remove('text-gray-900');
+            link.classList.add('text-white');
+        });
+    }
+});
