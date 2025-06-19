@@ -5,81 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buchung – Camp Schwerin</title>
     <link rel="stylesheet" href="src/style.css" />
-    <style>
-      body {
-        overflow-x: hidden;
-      }
+    <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
-      #navbar {
-        background-color: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(0px);
-        transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
-      }
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
-      #navbar.scrolled {
-        background-color: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(10px);
-      }
 
-      #navbar.scrolled .nav-link {
-        color: #1f2937;
-      }
-    </style>
   </head>
-  <body class="bg-gray-100 text-gray-900 font-sans relative overflow-x-hidden">
-    <!-- Navbar -->
+    <body class="bg-gray-100 text-gray-900 font-sans relative overflow-x-hidden">
+
     <header id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300 ease-in-out">
       <nav class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between transition-colors duration-300 ease-in-out">
-
-        <!-- Logo -->
+        
         <div class="text-white text-2xl font-bold tracking-wide glow-text">Camp Schwerin</div>
 
-        <!-- Desktop Navigation -->
         <ul class="hidden md:flex space-x-6 font-medium text-white nav-links relative">
           <li><a href="/index.html#start" class="nav-link">Start</a></li>
+          <li><a href="/index.html#ueber-uns" class="nav-link">Über uns</a></li>
           <li><a href="/index.html#raeume" class="nav-link">Räume</a></li>
           <li><a href="/index.html#kontakt" class="nav-link">Kontakt</a></li>
+          <li><a href="/raeume.html" class="nav-link">Vermietung</a></li>
 
-          <!-- Dropdown -->
-          <li class="relative group">
-            <div class="nav-link cursor-pointer text-white">Vermietung ▾</div>
-            <div class="absolute left-0 top-full pt-3 w-48 z-50">
-              <div class="bg-white rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-out">
-                <a href="/buchung.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Eventräume</a>
-                <a href="/geraete.html" class="block px-4 py-2 text-gray-800 hover:bg-pink-100 hover:text-pink-600 transition">Eventausstattung</a>
-              </div>
-            </div>
-          </li>
         </ul>
 
-        <!-- Burger Button -->
         <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">
           ☰
         </button>
       </nav>
 
-      <!-- Mobile Navigation -->
       <ul id="mobile-menu" class="hidden md:hidden flex-col absolute top-20 left-0 w-full bg-white text-gray-800 font-medium nav-links px-6 py-4 space-y-4 z-50">
         <li><a href="/index.html#start" class="nav-link">Start</a></li>
+        <li><a href="/index.html#ueber-uns" class="nav-link">Über uns</a></li>
         <li><a href="/index.html#raeume" class="nav-link">Räume</a></li>
         <li><a href="/index.html#kontakt" class="nav-link">Kontakt</a></li>
+        <li><a href="/raeume.html" class="nav-link">Vermietung</a></li>
 
-        <!-- Mobile Dropdown -->
-        <li>
-          <button id="vermietung-toggle" class="w-full text-left nav-link flex justify-between items-center">
-            Vermietung
-            <span>▾</span>
-          </button>
-          <ul id="vermietung-submenu" class="hidden pl-4 mt-2 space-y-2">
-            <li><a href="/buchung.html" class="block">Eventräume</a></li>
-            <li><a href="/geraete.html" class="block">Eventausstattung</a></li> <!-- 🔧 FIX: vorher 'geraeäte.html' -->
-          </ul>
-        </li>
       </ul>
     </header>
 
-    <!-- Hero -->
     <section class="min-h-[70vh] relative flex items-center justify-center">
       <img src="/src/assets/images/buchung.png" alt="Buchung Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
       <div class="relative z-10 text-center px-6">
@@ -89,68 +52,84 @@
       </div>
     </section>
 
-    <!-- Buchungsformular Bereich -->
     <section id="formular" class="py-24 px-6 bg-gray-100">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12">
-          <!-- Formular -->
-          <form class="bg-white p-8 rounded-2xl shadow-lg space-y-6">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-              <input type="text" placeholder="Max Mustermann"
-                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Telefonnummer</label>
-              <input type="tel" placeholder="01234 567890"
-                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">E-Mail</label>
-              <input type="email" placeholder="deine@email.de"
-                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Datum der Veranstaltung</label>
-              <input type="date"
-                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Personenanzahl</label>
-              <input type="number" min="1" placeholder="z. B. 80"
-                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Veranstaltungstyp</label>
-              <select
-                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400">
-                <option>Hochzeit</option>
-                <option>Seminar</option>
-                <option>Schulung</option>
-                <option>Privatfeier</option>
-                <option>Sonstiges</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Nachricht / Wünsche</label>
-              <textarea rows="4" placeholder="Teile uns mit, was du planst..."
-                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
-            </div>
-            <button type="submit"
-              class="w-full bg-pink-500 hover:bg-pink-400 text-white font-semibold py-3 rounded-xl transition-all shadow-md">
-              Buchungsanfrage senden
-            </button>
-          </form>
+      <div class="max-w-3xl mx-auto">
 
-          <!-- Vorschau Bild -->
-          <div class="bg-white p-8 rounded-2xl shadow-lg flex items-center justify-center">
-            <img src="/assets/1a.png" alt="Raumvorschau" class="w-full max-w-md rounded-xl" />
-          </div>
+        <div id="auswahlBuchung" class="bg-white p-6 rounded-2xl shadow-xl mb-10">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">Ihre ausgewählten Mietobjekte</h3>
+          <ul id="buchungAuswahlListe" class="mb-4 text-sm text-gray-700 space-y-1"></ul>
+          <p class="font-semibold mb-4">Gesamt: <span id="buchungGesamt">0</span> €</p>
+          <button id="resetAuswahl" class="bg-red-500 hover:bg-red-400 text-white text-sm font-semibold px-4 py-2 rounded-lg">
+            ❌ Auswahl löschen
+          </button>
+          <input type="hidden" name="mietauswahl" id="mietauswahlFeld" />
         </div>
+
+        <form id="raum-form" class="bg-white p-10 rounded-2xl shadow-2xl space-y-8">
+          <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Buchungsanfrage stellen</h2>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input name="name" type="text" required placeholder="Max Mustermann"
+              class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-400" />
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Telefonnummer</label>
+            <input name="telefonnummer" type="tel" required placeholder="01234 567890"
+              class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-400" />
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">E-Mail</label>
+            <input name="email" type="email" required placeholder="deine@email.de"
+              class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-400" />
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Datum der Veranstaltung</label>
+            <input
+              name="datum"
+              type="datetime-local"
+              required
+              class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-400"
+            />
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Personenanzahl</label>
+            <input name="personenanzahl" type="number" required placeholder="z. B. 80"
+              class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-400" />
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Veranstaltungstyp</label>
+            <select name="typ" required
+              class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-400">
+              <option>Hochzeit</option>
+              <option>Seminar</option>
+              <option>Schulung</option>
+              <option>Privatfeier</option>
+              <option>Sonstiges</option>
+            </select>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Nachricht / Wünsche</label>
+            <textarea name="nachricht" rows="5" placeholder="Teile uns mit, was du planst..."
+              class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-400"></textarea>
+          </div>
+
+          <div id="form-message" class="py-3 px-4 rounded-xl text-center text-sm hidden"></div>
+
+          <button type="submit"
+            class="w-full bg-pink-500 hover:bg-pink-400 text-white text-lg font-semibold py-4 rounded-xl transition-all shadow-md">
+            Buchungsanfrage senden
+          </button>
+        </form>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12 mt-20">
       <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
         <div>
@@ -163,8 +142,10 @@
             <li><a href="/index.html#start" class="hover:text-pink-400 transition">Start</a></li>
             <li><a href="/index.html#raeume" class="hover:text-pink-400 transition">Räume</a></li>
             <li><a href="/index.html#kontakt" class="hover:text-pink-400 transition">Kontakt</a></li>
-            <li><a href="/buchung.html" class="hover:text-pink-400 transition">Eventräume</a></li>
-            <li><a href="/geraete.html" class="hover:text-pink-400 transition">Evenausstattung</a></li>
+            <li><a href="/raeume.html" class="hover:text-pink-400 transition">Vermietung</a></li>
+            <li><a href="/buchung.html" class="hover:text-pink-400 transition">Jetzt Anfragen</a></li>
+            <li><a href="/impressum.html" class="hover:text-pink-400 transition">Impressum</a></li>
+            <li><a href="/datenschutz.html" class="hover:text-pink-400 transition">Datenschutzerklärung</a></li>
           </ul>
         </div>
         <div>
@@ -174,7 +155,7 @@
             Werkstraße 114<br />
             19061 Schwerin<br /><br />
             <strong>E-Mail:</strong> info@camp-schwerin.de<br />
-            <strong>Tel:</strong> 0385 12345678
+            <strong>Tel:</strong> 0176 44408665
           </p>
         </div>
       </div>
@@ -182,7 +163,8 @@
         &copy; 2025 Camp Schwerin – Alle Rechte vorbehalten
       </div>
     </footer>
-
+    
+    
     <script>
       // Mobile Menu Toggle
       const toggle = document.getElementById('menu-toggle');
@@ -229,5 +211,43 @@
         }
       });
     </script>
+
+    <script>
+      const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true
+      });
+    </script>
+
+    <script>
+      const gespeicherteAuswahl = JSON.parse(localStorage.getItem('mietauswahl') || '[]');
+      const liste = document.getElementById('buchungAuswahlListe');
+      const gesamtEl = document.getElementById('buchungGesamt');
+      const hiddenInput = document.getElementById('mietauswahlFeld');
+      const box = document.getElementById('auswahlBuchung');
+
+      // Nur valide Objekte berücksichtigen
+      const gefiltert = gespeicherteAuswahl.filter(item => item?.titel && typeof item.preis === 'number');
+
+      if (gefiltert.length > 0) {
+        let summe = 0;
+        liste.innerHTML = '';
+        gefiltert.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = `• ${item.titel} (${item.preis.toFixed(2)} €)`;
+          liste.appendChild(li);
+          summe += item.preis;
+        });
+        gesamtEl.textContent = summe.toFixed(2);
+        hiddenInput.value = gefiltert.map(i => `${i.titel} (${i.preis.toFixed(2)} €)`).join(', ');
+        box.style.display = 'block';
+      } else {
+        box.style.display = 'none';
+      }
+    </script>
+
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
